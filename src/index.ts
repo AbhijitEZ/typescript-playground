@@ -35,7 +35,7 @@ greet = (a, b) => {
   console.log(a + b);
 };
 
-greet("hello", "type");
+greet("hello", "type defs");
 
 let funcSign: (obj: { name: string }) => void;
 
