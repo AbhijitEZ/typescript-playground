@@ -44,3 +44,30 @@ funcSign = obj => {
 };
 
 funcSign({ name: "func sign" });
+
+// DOM and Type Casting
+
+const form = document.querySelector(".form-one") as HTMLFormElement;
+const inputEmail = document.querySelector("#email") as HTMLInputElement;
+
+form.addEventListener("submit", (e: Event) => {
+  e.preventDefault();
+  console.log(inputEmail.value);
+});
+
+// Class
+
+class Invoice {
+  client: string;
+  money: number;
+
+  constructor(c: string, m: number) {
+    this.client = c;
+    this.money = m;
+  }
+}
+
+const invoOne = new Invoice("Ninja", 100);
+
+const invoArr: Invoice[] = [];
+invoArr.push(invoOne);
