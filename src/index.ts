@@ -149,7 +149,7 @@ let resDoc: Resource<{ uid: number }> = {
 console.log(resDoc, "Generic with interface");
 
 //==========================================================
-// TuPLES
+// TUPLES
 //==========================================================
 
 let tup: [string, number, boolean];
