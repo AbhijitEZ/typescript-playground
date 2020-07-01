@@ -1,6 +1,7 @@
 import { Invoice } from "./classes/Invoice";
 import { ListTemplate } from "./classes/ListTemplate";
 import { HasFormatter } from "./interfaces/HasFormatter";
+
 //==========================================================
 // Array & Object type
 //==========================================================
@@ -111,3 +112,32 @@ const textLi: string[] = ["First", "Second", "Third"];
 textLi.forEach(element => {
   ul.createItem(element);
 });
+
+//==========================================================
+// GENERICS
+//==========================================================
+const addUID = <T extends object>(obj: T) => {
+  const uid = parseInt((Math.random() * 999999).toFixed(), 10);
+  return { ...obj, uid };
+};
+
+let uidDoc = addUID({ name: "Chris" });
+console.log(uidDoc);
+
+//==========================================================
+// GENERICS with Interface
+//==========================================================
+
+interface Resource<T> {
+  name: string;
+  data: T;
+}
+
+let resDoc: Resource<{ uid: number }> = {
+  name: "Micheal",
+  data: {
+    uid: 885695
+  }
+};
+
+console.log(resDoc, "Generic with interface");
