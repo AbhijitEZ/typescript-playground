@@ -125,19 +125,35 @@ let uidDoc = addUID({ name: "Chris" });
 console.log(uidDoc);
 
 //==========================================================
-// GENERICS with Interface
+// GENERICS with Interface and ENUMS
 //==========================================================
+enum ResourceType {
+  BOOK = 1,
+  LIBRARY = 2
+}
 
 interface Resource<T> {
   name: string;
+  resource: ResourceType;
   data: T;
 }
 
 let resDoc: Resource<{ uid: number }> = {
   name: "Micheal",
+  resource: ResourceType.BOOK,
   data: {
     uid: 885695
   }
 };
 
 console.log(resDoc, "Generic with interface");
+
+//==========================================================
+// TuPLES
+//==========================================================
+
+let tup: [string, number, boolean];
+
+tup = ["Client", 1, false];
+
+console.log(...tup, "<-tuples");
